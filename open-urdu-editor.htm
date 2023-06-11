@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body { 
+            margin: 0px;
+        }
+        #header { 
+            background-color: #196c30; 
+            padding: 15px;
+            font-family: "Montserrat",Sans-Serif; 
+        }
+        #header a:link {
+            color: white;
+            text-decoration: none;
+        }
+        #header a:hover, #header a:visited {
+            color: lightgray;
+        }
+        #content {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .input {
+            font-size: 17pt;
+            color: gray;
+            border: 1px black solid;
+            width: 60%;
+        }
+        .btn {
+            font-size: 13pt;
+            width: 30px;
+            background-color: whitesmoke;
+            border: 1px black solid;
+        }
+        .large {
+            width: 100px;
+        }
+        .larger {
+            font-size: 9pt;
+            width: 200px;
+            margin: 5px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: #196c30;
+        }
+    </style>
+    <title>OPEN Urdu Text Editor</title>
+    <div id="header"><a href="https://openpk.thinkific.com" target="_blank">OPEN | اوپن</a></div>
+    <div></div>
+</head>
+<body>
+    <form>
+        <div id="content">
+            <div>
+                <h1>اردو عبارت</h1>
+                <textarea id="txtUrdu" class="input" name="txtUrdu" rows="15" dir="rtl" onkeypress="pressChar(); return false;"></textarea>
+            </div>
+            <div style="padding: 5px;">
+                <input type="button" class="btn" id="btnQaf" onclick="typeChar('q'); return false;" value="ق" />
+                <input type="button" class="btn" id="btnWao" onclick="typeChar('w'); return false;" value="و" />
+                <input type="button" class="btn" id="btnAin" onclick="typeChar('e'); return false;" value="ع" />
+                <input type="button" class="btn" id="btnRey" onclick="typeChar('r'); return false;" value="ر" />
+                <input type="button" class="btn" id="btnTey" onclick="typeChar('t'); return false;" value="ت" />
+                <input type="button" class="btn" id="btnTte" onclick="typeChar('T'); return false;" value="ٹ" />
+                <input type="button" class="btn" id="btnBariYay" onclick="typeChar('y'); return false;" value="ے" />
+                <input type="button" class="btn" id="btnHamza" onclick="typeChar('U'); return false;" value="ء" />
+                <input type="button" class="btn" id="btnChotiYay" onclick="typeChar('i'); return false;" value="ی" />
+                <input type="button" class="btn" id="btnChotiHey" onclick="typeChar('o'); return false;" value="ہ" />
+                <input type="button" class="btn" id="btnPey" onclick="typeChar('p'); return false;" value="پ" />
+            </div>
+            <div style="padding: 5px;">
+                <input type="button" class="btn" id="btnAlif" onclick="typeChar('a'); return false;" value="ا" />
+                <input type="button" class="btn" id="btnSeen" onclick="typeChar('s'); return false;" value="س" />
+                <input type="button" class="btn" id="btnDaal" onclick="typeChar('d'); return false;" value="د" />
+                <input type="button" class="btn" id="btnFeh" onclick="typeChar('f'); return false;" value="ف" />
+                <input type="button" class="btn" id="btnGhaaf" onclick="typeChar('g'); return false;" value="گ" />
+                <input type="button" class="btn" id="btnDoCashmiHey" onclick="typeChar('h'); return false;" value="ھ" />
+                <input type="button" class="btn" id="btnJeem" onclick="typeChar('j'); return false;" value="ج" />
+                <input type="button" class="btn" id="btnKaaf" onclick="typeChar('k'); return false;" value="ک" />
+                <input type="button" class="btn" id="btnLaam" onclick="typeChar('l'); return false;" value="ل" />
+            </div>
+            <div style="padding: 5px;">
+                <input type="button" class="btn" id="btnZeh" onclick="typeChar('z'); return false;" value="ز" />
+                <input type="button" class="btn" id="btnSheen" onclick="typeChar('x'); return false;" value="ش" />
+                <input type="button" class="btn" id="btnChey" onclick="typeChar('c'); return false;" value="چ" />
+                <input type="button" class="btn" id="btnToye" onclick="typeChar('v'); return false;" value="ط" />
+                <input type="button" class="btn" id="btnBay" onclick="typeChar('b'); return false;" value="ب" />
+                <input type="button" class="btn" id="btnNoon" onclick="typeChar('n'); return false;" value="ن" />
+                <input type="button" class="btn" id="btnMeem" onclick="typeChar('m'); return false;" value="م" />
+            </div>
+            <hr style="width: 60%;" />
+            <div style="padding: 5px;">
+                <input type="button" class="btn" id="btnAlifMud" onclick="typeChar('A'); return false;" value="آ" />
+                <input type="button" class="btn" id="btnDdaal" onclick="typeChar('D'); return false;" value="ڈ" />
+                <input type="button" class="btn" id="btnZaal" onclick="typeChar('Z'); return false;" value="ذ" />
+                <input type="button" class="btn" id="btnRrey" onclick="typeChar('R'); return false;" value="ڑ" />
+                <input type="button" class="btn" id="btnCay" onclick="typeChar('C'); return false;" value="ث" />
+                <input type="button" class="btn" id="btnSwad" onclick="typeChar('S'); return false;" value="ص" />
+                <input type="button" class="btn" id="btnZwad" onclick="typeChar('J'); return false;" value="ض" />
+                <input type="button" class="btn" id="btnZoye" onclick="typeChar('V'); return false;" value="ظ" />
+                <input type="button" class="btn" id="btnZhay" onclick="typeChar('X'); return false;" value="ژ" />
+                <input type="button" class="btn" id="btnNoonGhunna" onclick="typeChar('N'); return false;" value="ں" />
+                <input type="button" class="btn" id="btnWowHumza" onclick="typeChar('W'); return false;" value="ؤ" />
+                <input type="button" class="btn" id="btnChotiYayHamza" onclick="typeChar('u'); return false;" value="ئ" />
+                <input type="button" class="btn" id="btnBariYayHamza" onclick="typeChar('Y'); return false;" value="ۓ" />
+                <input type="button" class="btn" id="btnChotiHeyHamza" onclick="typeChar('O'); return false;" value="ۂ" />
+            </div>
+            <div>
+                <input type="button" class="btn large" id="btnPakistan" onclick="typeWord('پاکستان');" value="پاکستان" />
+                <input type="button" class="btn large" id="btnOpen" onclick="typeWord('اوپن');" value="اوپن" />    
+                <input type="button" class="btn large" id="btnOpenFull" onclick="typeWord('اوپن پاکستان ایجوکیشن نیٹورک');" value="پورا اوپن" />
+                <br />
+                <input type="button" class="btn larger" id="btnSpace" onclick="typeWord(' '); return false;" value="Space" />
+                <hr style="width: 60%;" />
+                <input type="button" class="btn larger" id="btnSpace" onclick="document.getElementById('txtUrdu').value = '';" value="Clear" />
+            </div>
+        </div>
+        <div style="color: lightgray; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 9pt; padding: 25px; font-style: italic; text-align: center;">
+            Open Pakistan Education Network (OPEN)
+        </div>      
+        <script>
+            let textBox = document.getElementById("txtUrdu");
+            textBox.value = "";
+
+            // Types a character when a key is pressed on the keyboard
+            function pressChar() {
+                // alert("AAA");
+                let urduKeys = {
+                    97: {char: "ا"}, 98: {char: "ب" }, 112: {char: "پ"}, 116: {char: "ت"}, 84: {char: "ٹ"}, 7: {char: "ث"}, 106: {char: "ج"}, 99: {char: "چ"}, 72: {char: "ح"}, 107: {char: "خ"}, 100: {char: "د"}, 68: {char: "ڈ"}, 90: {char: "ذ"}, 114: {char: "ر"}, 82: {char: "ڑ"}, 122: {char: "ز"}, 88: {char: "ژ"}, 115: {char: "س"}, 120: {char: "ش"}, 83: {char: "ص"}, 74: {char: "ض"}, 118: {char: "ط"}, 86: {char: "ظ"}, 101: {char: "ع"}, 71: {char: "غ"}, 102: {char: "ف"}, 113: {char: "ق"}, 107: {char: "ک"}, 103: {char: "گ"}, 108: {char: "ل"}, 109: {char: "م"}, 110: {char: "ن"}, 78: {char: "ں"}, 119: {char: "و"}, 111: {char: "ہ"}, 104: {char: "ھ"}, 85: {char: "ء"}, 105: {char: "ی"}, 121: {char: "ے"}, 117: {char: "ئ"}, 65: {char: "آ"}, 89: {char: "ۓ"}, 87: {char: "ؤ"}, 79: {char: "ۂ"}
+                };
+
+                let typedChar = window.event.keyCode;
+                textBox.value += urduKeys[typedChar].char;
+            }
+
+            // Types a character when a button in clicked
+            function typeChar(clickedChar) {
+                let urduKeys = {
+                    "a": {char: "ا"}, "b": {char: "ب" }, "p": {char: "پ"}, t: {char: "ت"}, T: {char: "ٹ"}, C: {char: "ث"}, j: {char: "ج"}, c: {char: "چ"}, H: {char: "ح"}, K: {char: "خ"}, d: {char: "د"}, D: {char: "ڈ"}, Z: {char: "ذ"}, r: {char: "ر"}, R: {char: "ڑ"}, z: {char: "ز"}, X: {char: "ژ"}, s: {char: "س"}, x: {char: "ش"}, S: {char: "ص"}, J: {char: "ض"}, v: {char: "ط"}, V: {char: "ظ"}, e: {char: "ع"}, G: {char: "غ"}, f: {char: "ف"}, q: {char: "ق"}, k: {char: "ک"}, g: {char: "گ"}, l: {char: "ل"}, m: {char: "م"}, n: {char: "ن"}, N: {char: "ں"}, w: {char: "و"}, o: {char: "ہ"}, h: {char: "ھ"}, U: {char: "ء"}, i: {char: "ی"}, y: {char: "ے"}, u: {char: "ئ"}, A: {char: "آ"}, Y: {char: "ۓ"}, W: {char: "ؤ"}, O: {char: "ۂ"}
+                }
+
+                textBox.value += urduKeys[clickedChar].char;
+            }
+
+            function typeWord (typedWord) {
+                textBox.value += typedWord + " ";
+            }
+        </script>
+    </form>
+</body>
+</html>
